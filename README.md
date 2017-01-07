@@ -5,8 +5,11 @@ Libraries required
 
 
 Blynk - http://www.blynk.cc/
+
 ArduinoOTA (from Arduino IDE Managed Libraries) 
+
 SimpleTimer - Included in Blynk Library
+
 FastLED - http://fastled.io/
 
 Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastled-blynk-smart-shelf-video/7333
