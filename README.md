@@ -4,7 +4,7 @@ An Ardiuno sketch to connect an ESP (all varients) to WS28xx LED strips and cont
 Libraries required
 
 ![Blynk](http://www.blynk.cc/)
-ArduinoOTA
+ArduinoOTA (from Arduino IDE Managed Libraries) 
 SimpleTimer
 FastLED
 
