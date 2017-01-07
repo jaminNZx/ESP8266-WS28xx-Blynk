@@ -4,7 +4,11 @@ An Ardiuno sketch to connect an ESP (all varients) to WS28xx LED strips and cont
 - - - -
 Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastled-blynk-smart-shelf-video/7333
 
-![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/original/2X/d/d8380acfb7de92c7fef6b4c939a5e46bf0166eac.PNG)
+Video:
+
+[![Smart LED Controller Video](https://img.youtube.com/vi/0lBiOeScbh4/0.jpg)](https://www.youtube.com/watch?v=0lBiOeScbh4)
+
+![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/optimized/2X/3/3f2e471f2898263a4ee39f464b856228008e9604_1_666x500.jpg)
 
 ## Hardware
 
