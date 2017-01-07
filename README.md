@@ -1,3 +1,6 @@
+# THIS TUTORIAL IS STILL A WORK IN PROGRESS. SEE THE BLYNK COMMUNITY THREAD BELOW FOR ALL INFO AVAILABLE # 
+
+
 # ESP8266-WS2811B-Blynk
 An Ardiuno sketch to connect an ESP (all varients) to WS28xx LED strips and control them using the Blynk mobile app. 
 
