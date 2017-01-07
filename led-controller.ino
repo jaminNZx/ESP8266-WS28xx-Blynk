@@ -70,7 +70,7 @@ void setup()
   // Blynk.begin(auth, ssid, pass, IPAddress(192, 168, 1, 2));
   while (Blynk.connect() == false) {}
   /*********** OTA *************/
-  ArduinoOTA.setHostname("LED-Office1");
+  ArduinoOTA.setHostname("LED-Controller-1");
   ArduinoOTA.begin();
   /******** BOOT VARS **********/
   varHue = 190;           // Start on a Blue Hue
