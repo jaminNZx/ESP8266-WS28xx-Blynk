@@ -3,10 +3,11 @@ An Ardiuno sketch to connect an ESP (all varients) to WS28xx LED strips and cont
 
 Libraries required
 
-![Blynk](http://www.blynk.cc/)
+
+Blynk - http://www.blynk.cc/
 ArduinoOTA (from Arduino IDE Managed Libraries) 
-SimpleTimer
-FastLED
+SimpleTimer - Included in Blynk Library
+FastLED - http://fastled.io/
 
 Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastled-blynk-smart-shelf-video/7333
 
