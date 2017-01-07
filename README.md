@@ -6,7 +6,6 @@ Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastl
 
 ![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/original/2X/d/d8380acfb7de92c7fef6b4c939a5e46bf0166eac.PNG)
 
-- - - -
 ## Hardware
 
 * ESP Dev Board. This could be any size or shape as long as it is ***not*** the ESP-01 > ESP-07 varients. 
@@ -14,7 +13,7 @@ Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastl
 * High current power supply. (About 1A / meter).
 * Small prject box.
 
-- - - -
+
 ## Installation
 
 * Download the project INO file. 
