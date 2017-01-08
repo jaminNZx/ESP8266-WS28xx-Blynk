@@ -16,7 +16,7 @@ Video:
 * ESP Dev Board. This could be any size or shape as long as it is ***not*** the ESP-01 > ESP-07 varients. 
 * WS2811/WS2812/WS2812B LEDs.
 * High current power supply. (About 1A / meter).
-* Small prject box.
+* Small project box.
 
 ![Smart LED Controller hardware](http://i.imgur.com/tSUvso1.png)
 
@@ -24,8 +24,8 @@ Video:
 ## Installation
 
 * Download the project INO file. 
-* Download and install the Blynk Mpbile App for iOS or Android. 
-* Create a new project in the Blynk app and email yourself the auto generated auth token. 
+* Download and install the Blynk Mobile App for iOS or Android. 
+* Create a new project in the Blynk app and email yourself the auto generated auth token.
 * Paste the auth token in to the project file along with your Wifi SSID and PASSWORD. 
 * Upload sketch to your ESP hardware. 
 ___If you are using ArduinoOTA to update over the network then also set a device hostname and power cycle your hardware after first upload otherwise OTA won't work___
