@@ -29,8 +29,9 @@ Video:
 * Download the project INO file. 
 * Download and install the Blynk Mpbile App for iOS or Android. 
 * Create a new project in the Blynk app and email yourself the auto generated auth token. 
-* Paste the auth token in to the project file along with your Wifi SSID and PASS. 
- ___If you are using ArduinoOTA to update over the network then also set a device hostname___
+* Paste the auth token in to the project file along with your Wifi SSID and PASSWORD. 
+* Upload sketch to your ESP hardware. 
+___If you are using ArduinoOTA to update over the network then also set a device hostname and power cycle your hardware after first upload otherwise OTA won't work___
  
 #### Libraries required:
 
