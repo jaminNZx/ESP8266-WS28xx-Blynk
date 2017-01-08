@@ -18,7 +18,7 @@ Video:
 * High current power supply. (About 1A / meter).
 * Small project box.
 
-![Smart LED Controller hardware](http://i.imgur.com/tSUvso1.png)
+![Smart LED Controller hardware](http://i.imgur.com/jamXAIA.png)
 
 
 ## Installation
