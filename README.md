@@ -32,9 +32,35 @@ Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastl
 * Create a new project in the Blynk app and email yourself the auto generated auth token.
  * Use the QR Code below to clone my Blynk project dashboard. It will require about $4 worth of in-app energy or use a local server where you can give yourself free energy.
 * Paste the auth token in to the project file along with your Wifi SSID and PASSWORD. 
+```cpp
+char auth[] = "...";
+char ssid[] = "...";
+char pass[] = "...";
+```
+* Define the number of LEDs you are using. 
+```cpp
+#define NUM_LEDS 100
+```
+* If you plan on using more than 1 controller, you can set a nickname for each
+```cpp
+char nickname[] = "OFFICE1";
+```
+* And select it's zone. 
+ * 0 will cause a fatal error
+ * 1 reserved for ALL zones
+ * 2 = Menu Widget Item 1 (Modify zone name in Blynk Dash)
+ * 3 = Menu Widget Item 2
+ * 4 = Menu Widget Item 3
+ * 5 = etc etc.. you could make as many zones as the Blynk Menu widget allows.
+```cpp
+int HardwareZone = 2; // OFFICE 
+```
 
 * Upload sketch to your ESP hardware. 
 ___If you are using ArduinoOTA to update over the network then also set a device hostname and power cycle your hardware after first upload otherwise OTA won't work___
+```cpp
+ArduinoOTA.setHostname("LED-Office1");
+```
 
 ![Blynk Clone Project QR Code](http://i.imgur.com/FW4eFXy.jpg)
  
