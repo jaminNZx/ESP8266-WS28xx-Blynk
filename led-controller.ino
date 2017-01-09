@@ -39,8 +39,8 @@
 #define DATA_PIN           12
 /************************ CHANGE SETTINGS HERE ONLY *************************/
 #define NUM_LEDS 100
-char nickname[] = "OFFICE1";
-int HardwareZone = 2; // OUTDOOR // DONT USE 0 or 1 ... CAUSES ERRORS WITH LOGIC
+char nickname[] = "xxxxxxxx";
+int HardwareZone = 2; 
 char auth[] = "xxxxxxxx";
 char ssid[] = "xxxxxxxx";
 char pass[] = "xxxxxxxx";
