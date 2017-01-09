@@ -2,7 +2,8 @@
 
 
 # ESP8266-WS2811B-Blynk
-An Ardiuno sketch to connect an ESP (all varients) to WS28xx LED strips and control them using the Blynk mobile app. 
+An Ardiuno sketch to connect an ESP8266 to WS28xx LED strips and control them using the Blynk mobile app. 
+This small tutorial will help you build the controller which you can hook up to any number of LEDs you like. (max 2048 I think?) 
 
 - - - -
 Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastled-blynk-smart-shelf-video/7333
@@ -23,7 +24,7 @@ Video:
 
 ## Installation
 
-* Download the project INO file. 
+* Download the project INO file and required libraies.
 * Download and install the Blynk Mobile App for iOS or Android. 
 * Create a new project in the Blynk app and email yourself the auto generated auth token.
 * Paste the auth token in to the project file along with your Wifi SSID and PASSWORD. 
