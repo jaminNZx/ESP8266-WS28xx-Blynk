@@ -5,12 +5,7 @@
 An Ardiuno sketch to connect an ESP8266 to WS28xx LED strips and control them using the Blynk mobile app. 
 This small tutorial will help you build the controller which you can hook up to any number of LEDs you like. (max 2048 I think?) 
 
-- - - -
 Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastled-blynk-smart-shelf-video/7333
-
-Video:
-
-[![Smart LED Controller Video](https://img.youtube.com/vi/0lBiOeScbh4/0.jpg)](https://www.youtube.com/watch?v=0lBiOeScbh4)
 
 ##  Installation
 
@@ -41,6 +36,12 @@ ___If you are using ArduinoOTA to update over the network then also set a device
 * ArduinoOTA (from Arduino IDE Managed Libraries) 
 
 ## Gallery
+
+#### Video
+
+[![Smart LED Controller Video](https://img.youtube.com/vi/0lBiOeScbh4/0.jpg)](https://www.youtube.com/watch?v=0lBiOeScbh4)
+
+#### LED Module 
 
 Here is a little LED light module I buult to put behind items around the house. 
 I also use this to control strips of LEDs by adding a 3 pin JST connector to the end of the internal LED wiring.
