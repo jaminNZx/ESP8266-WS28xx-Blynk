@@ -18,6 +18,12 @@ Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastl
 
 ![Smart LED Controller hardware](http://i.imgur.com/jamXAIA.png)
 
+#### Libraries required:
+
+* Blynk - http://www.blynk.cc/
+* SimpleTimer - Included in Blynk Library
+* FastLED - http://fastled.io/
+* ArduinoOTA (from Arduino IDE Managed Libraries) 
 
 #### Software
 
@@ -26,18 +32,12 @@ Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastl
 * Create a new project in the Blynk app and email yourself the auto generated auth token.
  * Use the QR Code below to clone my Blynk project dashboard. It will require about $4 worth of in-app energy or use a local server where you can give yourself free energy.
 * Paste the auth token in to the project file along with your Wifi SSID and PASSWORD. 
+
 * Upload sketch to your ESP hardware. 
 ___If you are using ArduinoOTA to update over the network then also set a device hostname and power cycle your hardware after first upload otherwise OTA won't work___
 
 ![Blynk Clone Project QR Code](http://i.imgur.com/FW4eFXy.jpg)
  
-#### Libraries required:
-
-* Blynk - http://www.blynk.cc/
-* SimpleTimer - Included in Blynk Library
-* FastLED - http://fastled.io/
-* ArduinoOTA (from Arduino IDE Managed Libraries) 
-
 ## Gallery
 
 #### Video
