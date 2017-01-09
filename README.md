@@ -12,7 +12,9 @@ Video:
 
 [![Smart LED Controller Video](https://img.youtube.com/vi/0lBiOeScbh4/0.jpg)](https://www.youtube.com/watch?v=0lBiOeScbh4)
 
-## Hardware
+##  Installation
+
+#### Hardware
 
 * ESP Dev Board. This could be any size or shape as long as it is ***not*** the ESP-01 > ESP-07 varients. 
 * WS2811/WS2812/WS2812B LEDs.
@@ -22,7 +24,7 @@ Video:
 ![Smart LED Controller hardware](http://i.imgur.com/jamXAIA.png)
 
 
-## Installation
+#### Software
 
 * Download the project INO file and required libraies.
 * Download and install the Blynk Mobile App for iOS or Android. 
@@ -38,7 +40,7 @@ ___If you are using ArduinoOTA to update over the network then also set a device
 * FastLED - http://fastled.io/
 * ArduinoOTA (from Arduino IDE Managed Libraries) 
 
-#### Gallery
+## Gallery
 
 Here is a little LED light module I buult to put behind items around the house. 
 I also use this to control strips of LEDs by adding a 3 pin JST connector to the end of the internal LED wiring.
