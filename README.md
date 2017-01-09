@@ -38,6 +38,10 @@ ___If you are using ArduinoOTA to update over the network then also set a device
 * FastLED - http://fastled.io/
 * ArduinoOTA (from Arduino IDE Managed Libraries) 
 
+#### Gallery
+
+Here is a little LED light module I buult to put behind items around the house. 
+I also use this to control strips of LEDs by adding a 3 pin JST connector to the end of the internal LED wiring.
 
 ![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/optimized/2X/3/3f2e471f2898263a4ee39f464b856228008e9604_1_666x500.jpg)
 ![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/optimized/2X/8/86fa4f07ea23d2684375fabe75922a8ec0c000a6_1_375x500.jpg)
