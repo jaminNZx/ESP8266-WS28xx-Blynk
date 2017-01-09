@@ -51,3 +51,4 @@ I also use this to control strips of LEDs by adding a 3 pin JST connector to the
 ![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/original/2X/4/493706c4a0123c67f99489ad7148b58b17109be2.jpg)
 ![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/optimized/2X/5/5f0616484f97dc5e4e3219aff4e08d3272430e8b_1_666x500.jpg)
 ![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/optimized/2X/6/6300d2c97a66e285e8275637572b022e97e916c4_1_375x500.jpg)
+![Smart LED Controller running on Blynk](http://community.blynk.cc/uploads/default/optimized/2X/d/d5a41fea209ca08cef209a7a83d4eb8d5dfdb772_1_666x500.jpg)
