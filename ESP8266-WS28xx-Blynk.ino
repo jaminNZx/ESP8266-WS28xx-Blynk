@@ -7,14 +7,10 @@
 #include <elapsedMillis.h>
 #include <wifi_credentials.h>
 #include "settings.h"
-#include <RGBConverter.h>
-
-RGBConverter rgbc;
 
 int varManualMode, varHue, varSaturation, varBrightness, varHuePrev, varHueNew;
 int varNextColour, varNextColourPrev, varBlendingMode, varUpdatesPerSec;
 int varAlertMode, varZone, varRainbowSpeed;
-//byte HexRGB[4];
 long HexRGB;
 String FormattedRGB, FormattedRGBprev;
 int varNight, curMode, curSaturation, curBrightness, curHue;
@@ -65,7 +61,7 @@ void setup() {
 
 // List of patterns to cycle through.  Each is defined as a separate function below.
 typedef void (*SimplePatternList[])();
-SimplePatternList gPatterns = { rainbow, rainbowWithGlitter, confetti, sinelon, juggle, whitescan };
+SimplePatternList gPatterns = { rainbow, rainbowWithGlitter, confetti, sinelon, juggle};
 uint8_t gCurrentPatternNumber = 0; // Index number of which pattern is current
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 
@@ -401,7 +397,6 @@ void loop()
       break;
     default:
       gPatterns[gCurrentPatternNumber]();
-      FastLED.delay(1000 / varUpdatesPerSec);
       EVERY_N_MILLISECONDS( 20 ) {
         gHue++;  // slowly cycle the "base color" through the rainbow
       }
@@ -421,6 +416,7 @@ void nextPattern() {
 void rainbow() {
   // FastLED's built-in rainbow generator
   fill_rainbow( leds, LED_NUMBER, gHue, varRainbowSpeed);
+  FastLED.delay(1000 / varUpdatesPerSec);
 }
 
 void rainbowWithGlitter() {
@@ -433,6 +429,7 @@ void addGlitter( fract8 chanceOfGlitter) {
   if ( random8() < chanceOfGlitter) {
     leds[ random16(LED_NUMBER) ] += CRGB::White;
   }
+  FastLED.delay(1000 / varUpdatesPerSec);
 }
 
 void confetti() {
@@ -440,6 +437,7 @@ void confetti() {
   fadeToBlackBy( leds, LED_NUMBER, 10);
   int pos = random16(LED_NUMBER);
   leds[pos] += CHSV( gHue + random8(64), 200, 255);
+  FastLED.delay(1000 / varUpdatesPerSec);
 }
 
 void sinelon() {
@@ -447,6 +445,7 @@ void sinelon() {
   fadeToBlackBy( leds, LED_NUMBER, 20);
   int pos = beatsin16(13, 0, LED_NUMBER);
   leds[pos] += CHSV( gHue, 255, 192);
+  FastLED.delay(1000 / varUpdatesPerSec);
 }
 
 void juggle() {
@@ -457,14 +456,5 @@ void juggle() {
     leds[beatsin16(i + 7, 0, LED_NUMBER)] |= CHSV(dothue, 200, 255);
     dothue += 32;
   }
-}
-
-void whitescan() {
-  for (int i = 0; i < LED_NUMBER; i++) {
-    leds[i] = CRGB::White;
-    FastLED.show();
-    FastLED.delay(1000 / varUpdatesPerSec);
-    leds[i] = CRGB::Black;
-
-  }
+  FastLED.delay(1000 / varUpdatesPerSec);
 }
