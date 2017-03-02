@@ -9,7 +9,24 @@ Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastl
 
 ##  Installation
 
-#### Hardware
+### Wifi Credentials
+
+Create a new folder in your library dir (arduino\libraries\wifi_credentials) called 'wifi_credentials' and create a new file called 'wifi_credentials.h' and copy the example below:
+
+```cpp
+/*
+   Wifi Credentials
+*/
+#ifndef WIFI_CREDS_H
+#define WIFI_CREDS_H
+#define WIFI_SSID               "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+#define WIFI_PASS               "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+#endif
+```
+
+Replace "xxxxxxx" with your own Wifi network credentials.
+
+### Hardware
 
 * ESP Dev Board. This could be any size or shape as long as it is ***not*** the ESP-01 > ESP-07 varients. 
 * WS2811/WS2812/WS2812B LEDs.
@@ -18,29 +35,21 @@ Official Blynk Community forum thread: http://community.blynk.cc/t/esp8266-fastl
 
 ![Smart LED Controller hardware](http://i.imgur.com/jamXAIA.png)
 
-#### Libraries required:
+### Libraries required:
 
 * Blynk - http://www.blynk.cc/
 * SimpleTimer - Included in Blynk Library
 * FastLED - http://fastled.io/
 * ArduinoOTA (from Arduino IDE Managed Libraries) 
 
-#### Software
+### Software
 
 * Download the project INO file and required libraies.
 * Download and install the Blynk Mobile App for iOS or Android. 
 * Create a new project in the Blynk app and email yourself the auto generated auth token.
  * Use the QR Code below to clone my Blynk project dashboard. It will require about $4 worth of in-app energy or use a local server where you can give yourself free energy.
-* Paste the auth token in to the project file along with your Wifi SSID and PASSWORD. 
-```cpp
-char auth[] = "...";
-char ssid[] = "...";
-char pass[] = "...";
-```
+* Paste the auth token in to the settings.h file 
 * Define the number of LEDs you are using. 
-```cpp
-#define NUM_LEDS 100
-```
 * If you plan on using more than 1 controller, you can set a nickname for each
 ```cpp
 char nickname[] = "OFFICE1";
@@ -64,7 +73,7 @@ ArduinoOTA.setHostname("LED-Office1");
 
 ![Blynk Clone Project QR Code](http://i.imgur.com/FW4eFXy.jpg)
  
-## Gallery
+### Gallery
 
 #### Video
 
