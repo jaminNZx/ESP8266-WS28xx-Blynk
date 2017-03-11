@@ -1,10 +1,9 @@
-//#define BLYNK_PRINT Serial
+#define BLYNK_PRINT Serial
 #include <ArduinoOTA.h>
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 #include <FastLED.h>
 #include <SimpleTimer.h>
-#include <elapsedMillis.h>
 #include <wifi_credentials.h>
 #include "settings.h"
 
@@ -24,6 +23,7 @@ CRGB leds[LED_NUMBER];
 
 void setup() {
   WiFi.mode(WIFI_STA);
+  Serial.begin(115200);
 #if defined(USE_LOCAL_SERVER)
   Blynk.begin(AUTH, WIFI_SSID, WIFI_PASS, SERVER);
 #else
@@ -56,7 +56,7 @@ void setup() {
   terminal.println(F(" Device started"));
   terminal.flush();
 
-  timer.setInterval(250, updateColoursTest);
+  timer.setInterval(250, updateColours);
 }
 
 // List of patterns to cycle through.  Each is defined as a separate function below.
@@ -65,7 +65,7 @@ SimplePatternList gPatterns = { rainbow, rainbowWithGlitter, confetti, sinelon, 
 uint8_t gCurrentPatternNumber = 0; // Index number of which pattern is current
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 
-void updateColoursTest() {
+void updateColours() {
   if (varManualMode) {
     HexRGB = ((long)leds[0].r << 16) | ((long)leds[0].g << 8 ) | (long)leds[0].b;
     FormattedRGB = "#" + String(HexRGB, HEX);
@@ -75,7 +75,6 @@ void updateColoursTest() {
 BLYNK_WRITE(vPIN_HUE) {
   if ( (varZone == ZONE) || (varZone == 1)) {
     varHue = param.asInt();
-
   }
 }
 BLYNK_WRITE(vPIN_SATURATION) {

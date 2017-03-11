@@ -38,7 +38,7 @@
       In my home, I have 2 nodes in each room. So I call them OFFICE1, OFFICE2, LOUNGE1, LOUNGE2.
     --------------------------------------
 */
-#define NICKNAME                    "OFFICE1"
+#define NICKNAME                    "OFFICE2"
 /*
    --------------------------------------
    Over The Air Hostname
@@ -47,7 +47,7 @@
      Althought you can use what ever you like.
    --------------------------------------
 */
-#define OTA_HOSTNAME                "LED-OFFICE1"
+#define OTA_HOSTNAME                "LED-OFFICE2"
 /*
    Local Server Settings (uncomment to use local server)
 */
