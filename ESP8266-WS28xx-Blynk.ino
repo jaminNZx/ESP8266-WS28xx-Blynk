@@ -46,7 +46,7 @@ void setup() {
   varZone = 1;
   varRainbowSpeed = 0;    // Start stationary
   /******** FASTLED ************/
-#if defined(LED_LIMIT_MILLIAMPS)
+#ifdef LED_LIMIT_MILLIAMPS
   FastLED.setMaxPowerInVoltsAndMilliamps(5, LED_LIMIT_MILLIAMPS);
 #endif
   FastLED.addLeds<LED_TYPE, DATA_PIN, LED_ARRANGE>(leds, LED_NUMBER);
@@ -56,7 +56,7 @@ void setup() {
   terminal.println(F(" Device started"));
   terminal.flush();
 
-  timer.setInterval(250, updateColours);
+  timer.setInterval(500, updateColours);
 }
 
 // List of patterns to cycle through.  Each is defined as a separate function below.
@@ -66,25 +66,36 @@ uint8_t gCurrentPatternNumber = 0; // Index number of which pattern is current
 uint8_t gHue = 0; // rotating "base color" used by many of the patterns
 
 void updateColours() {
-  if (varManualMode) {
-    HexRGB = ((long)leds[0].r << 16) | ((long)leds[0].g << 8 ) | (long)leds[0].b;
-    FormattedRGB = "#" + String(HexRGB, HEX);
-    Blynk.setProperty(vPIN_HUE, "color", FormattedRGB);
-  }
+
 }
 BLYNK_WRITE(vPIN_HUE) {
   if ( (varZone == ZONE) || (varZone == 1)) {
     varHue = param.asInt();
+    if (varManualMode) {
+      HexRGB = ((long)leds[0].r << 16) | ((long)leds[0].g << 8 ) | (long)leds[0].b;
+      FormattedRGB = "#" + String(HexRGB, HEX);
+      Blynk.setProperty(vPIN_HUE, "color", FormattedRGB);
+    }
   }
 }
 BLYNK_WRITE(vPIN_SATURATION) {
   if ( (varZone == ZONE) || (varZone == 1)) {
     varSaturation = param.asInt();
+    if (varManualMode) {
+      HexRGB = ((long)leds[0].r << 16) | ((long)leds[0].g << 8 ) | (long)leds[0].b;
+      FormattedRGB = "#" + String(HexRGB, HEX);
+      Blynk.setProperty(vPIN_HUE, "color", FormattedRGB);
+    }
   }
 }
 BLYNK_WRITE(vPIN_BRIGHTNESS) {
   if ( (varZone == ZONE) || (varZone == 1)) {
     varBrightness = param.asInt();
+    if (varManualMode) {
+      HexRGB = ((long)leds[0].r << 16) | ((long)leds[0].g << 8 ) | (long)leds[0].b;
+      FormattedRGB = "#" + String(HexRGB, HEX);
+      Blynk.setProperty(vPIN_HUE, "color", FormattedRGB);
+    }
   }
 }
 BLYNK_WRITE(vPIN_PRESET) {
@@ -111,9 +122,7 @@ BLYNK_WRITE(vPIN_COLOUR_BLUE) {
   }
 }
 BLYNK_WRITE(vPIN_FPS) {
-  if ( (varZone == ZONE) || (varZone == 1)) {
-    varUpdatesPerSec = param.asInt();
-  }
+  if ( (varZone == ZONE) || (varZone == 1)) varUpdatesPerSec = param.asInt();
 }
 BLYNK_WRITE(vPIN_COLOUR_RED) {
   if ( (varZone == ZONE) || (varZone == 1)) {
@@ -153,8 +162,11 @@ BLYNK_WRITE(vPIN_COLOUR_WHITE) {
   }
 }
 BLYNK_WRITE(vPIN_MANUAL) {
-  if ( (varZone == ZONE) || (varZone == 1)) {
-    varManualMode = param.asInt();
+  if ( (varZone == ZONE) || (varZone == 1)) varManualMode = param.asInt();
+  if (param.asInt()) {
+    HexRGB = ((long)leds[0].r << 16) | ((long)leds[0].g << 8 ) | (long)leds[0].b;
+    FormattedRGB = "#" + String(HexRGB, HEX);
+    Blynk.setProperty(vPIN_HUE, "color", FormattedRGB);
   }
 }
 BLYNK_WRITE(vPIN_SYNC_GHUE) {
@@ -192,11 +204,6 @@ BLYNK_WRITE(vPIN_COLOUR_YELLOW) {
 }
 BLYNK_WRITE(vPIN_ALERT) {
   varAlertMode = param.asInt();
-  terminal.print(NICKNAME);
-  terminal.print(" | ALERT: ");
-  terminal.print(" CODE=");
-  terminal.println(varAlertMode);
-  terminal.flush();
 }
 BLYNK_WRITE(vPIN_OFF) {
   if ( (varZone == ZONE) || (varZone == 1)) {
@@ -390,15 +397,11 @@ void loop()
       //int numLedsToLight = map(val, 0, 1023, 0, NUM_LEDS);
 
       FastLED.clear();
-      for (int led = 0; led < testLEDnumber; led++) {
-        leds[led] = CRGB::Blue;
-      }
+      for (int led = 0; led < testLEDnumber; led++) leds[led] = CRGB::Blue;
       break;
     default:
       gPatterns[gCurrentPatternNumber]();
-      EVERY_N_MILLISECONDS( 20 ) {
-        gHue++;  // slowly cycle the "base color" through the rainbow
-      }
+      EVERY_N_MILLISECONDS( 20 ) gHue++;  // slowly cycle the "base color" through the rainbow
       break;
 
   }
@@ -408,7 +411,6 @@ void loop()
 #define ARRAY_SIZE(A) (sizeof(A) / sizeof((A)[0]))
 
 void nextPattern() {
-  // add one to the current pattern number, and wrap around at the end
   gCurrentPatternNumber = (gCurrentPatternNumber + 1) % ARRAY_SIZE( gPatterns);
 }
 
@@ -425,9 +427,7 @@ void rainbowWithGlitter() {
 }
 
 void addGlitter( fract8 chanceOfGlitter) {
-  if ( random8() < chanceOfGlitter) {
-    leds[ random16(LED_NUMBER) ] += CRGB::White;
-  }
+  if ( random8() < chanceOfGlitter) leds[ random16(LED_NUMBER) ] += CRGB::White;
   FastLED.delay(1000 / varUpdatesPerSec);
 }
 
