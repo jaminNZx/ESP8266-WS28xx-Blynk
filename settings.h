@@ -53,7 +53,7 @@
 */
 #define USE_LOCAL_SERVER
 #define SERVER                      IPAddress(192, 168, 1, 2)
-#define BLYNK_MSG_LIMIT             200
+#define BLYNK_MSG_LIMIT             400
 /*
    Hardware Pins
 */
@@ -67,40 +67,30 @@
 
 #define vPIN_PRESET                 V3
 
-#define vPIN_COLOUR_BLUE            V4
-
 #define vPIN_FPS                    V5
 
+#define vPIN_COLOUR_BLUE            V4
 #define vPIN_COLOUR_RED             V6
 #define vPIN_COLOUR_GREEN           V7
 #define vPIN_COLOUR_WHITE           V8
 
 #define vPIN_TERMINAL               V9
-
 #define vPIN_MANUAL                 V10
-
 #define vPIN_SYNC_GHUE              V11
-#define vPIN_COLOUR_YELLOW          V12
 
 #define vPIN_ALERT                  V13
-
 #define vPIN_OFF                    V14
-
-#define vPIN_COLOUR_LIGHTBLUE       V15
 
 #define vPIN_RAINBOWSPEED           V22
 #define vPIN_ZONE_SELECT            V23
-
 #define vPIN_TESTMODE               V24
 
 #define vPIN_COLOUR_MEM1            V25
 #define vPIN_COLOUR_MEM2            V26
-#define vPIN_COLOUR_MEMSAVE         V27
+#define vPIN_COLOUR_MEM3            V27
+#define vPIN_COLOUR_MEMSAVE         V28
 
 #define vPIN_NIGHTMODE              V29
-
-
-
 /*
 
 */
