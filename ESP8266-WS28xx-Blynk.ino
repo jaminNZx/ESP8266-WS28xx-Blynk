@@ -3,7 +3,6 @@
 #include <ESP8266WiFi.h>
 #include <BlynkSimpleEsp8266.h>
 #include <FastLED.h>
-#include <SimpleTimer.h>
 #include <wifi_credentials.h>
 #include "settings.h"
 
@@ -12,7 +11,7 @@ int testLEDnumber, varMemSave;
 int arrayCurrent[5], arrayMemory1[5], arrayMemory2[5], arrayMemory3[5], arrayNightMemory[5];
 
 WidgetTerminal terminal(vPIN_TERMINAL);
-SimpleTimer timer;
+BlynkTimer timer;
 CRGB leds[LED_NUMBER];
 
 void setup() {
